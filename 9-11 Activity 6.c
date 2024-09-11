@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+/* 2 Strings Comparison Activity*/
 
 void lowerstr1(char str1[]);
 void lowerstr2(char str2[]);
