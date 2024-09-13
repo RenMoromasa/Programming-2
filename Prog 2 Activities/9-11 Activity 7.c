@@ -57,7 +57,7 @@ int insertfirst (int arr[], int *size, int element){
     (*size)++;
 
     return 1;
-
+    
 }
 
 int insertlast (int arr[], int *size, int element){
