@@ -11,6 +11,5 @@ int main(){
 				printf("%c", vowels);
 		}	
 	}
-
 	return 0;
 }
