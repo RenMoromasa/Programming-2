@@ -11,59 +11,42 @@ int main () {
     int size = 5;
     
     printf("Original array: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    display(arr, &size);
 
     printf("Insert first: ");
     insertfirst(arr, &size, 0);
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    display(arr, &size);
+
     insertlast(arr, &size, 6);
-    printf("After inserting 6 at the end: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    printf("Insert last: ");
+    display(arr, &size);
 
     deletefirst(arr, &size);
-    printf("After deleting the first element: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    printf("Delete first: ");
+    display(arr, &size);
 
     deletelast(arr, &size);
-    printf("After deleting the last element: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    printf("Delete last: ");
+    display(arr, &size);
 
     return 0;
 }
-
 
 int insertfirst (int arr[], int *size, int element){
 
     for(int i = *size; i > 0; i--){
         arr[i] = arr[i-1];
     }
-
     arr[0] = element;
     (*size)++;
-
-    return 1;
+    return 0;
     
 }
 
 int insertlast (int arr[], int *size, int element){
 
     arr[(*size)++] = element;
-    return 1;
+    return 0;
 
 }
 
@@ -72,15 +55,22 @@ int deletefirst (int arr[], int *size){
     for(int i = 0; i < *size - 1; i++){
         arr[i] = arr[i+1];
     }
-
     (*size)--;
+    return 0;
 
-    return 1;
 }
 
 int deletelast (int arr[], int *size){
 
     (*size)--;
+    return 0;
+}
 
-    return 1;
+void display(int arr[], int *size) {
+
+    for (int i = 0; i < *size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
 }
