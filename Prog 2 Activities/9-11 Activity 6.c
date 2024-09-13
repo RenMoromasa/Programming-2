@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-/* 2 Strings Comparison Activity*/
+/* 2 Strings Comparison Activity - compare 2 strings and see if its reversible or not*/
 
 void lowerstr(char str[]);
 void reversible(char str1[], char str2[]);
