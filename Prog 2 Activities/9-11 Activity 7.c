@@ -1,48 +1,86 @@
 #include <stdio.h>
 #include <string.h>
 
-int insertfirst(int arr[], int size, int *count);
-int insertlast (int arr[], int size, int *count);
+int insertfirst (int arr[], int *size, int element); 
+int insertlast (int arr[], int *size, int element); 
+int deletefirst (int arr[], int *size);
+int deletelast (int arr[], int *size); 
 
-int main (){
+int main () {
+    int arr[5] = {1, 2, 3, 4, 5};
+    int size = 5;
+    
+    printf("Original array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 
-  int arr[5] = {1, 2, 3};
-  int size = 5;
-  int count = 3;
+    printf("Insert first: ");
+    insertfirst(arr, &size, 0);
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    insertlast(arr, &size, 6);
+    printf("After inserting 6 at the end: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 
-  insertfirst(arr, size, &count);
-  insertlast (arr, size, &count);
-  return 0;
+    deletefirst(arr, &size);
+    printf("After deleting the first element: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    deletelast(arr, &size);
+    printf("After deleting the last element: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
 }
 
-int insertfirst (int arr[], int size, int *count){
-  int i;
 
-  memcpy(&arr[1],&arr[0],sizeof(int) * size);
-  arr[0] = 10;
-  (*count)++;
+int insertfirst (int arr[], int *size, int element){
 
-  printf("\nInsert first: ");
-  for(i = 0; i < size; i++){
-    printf("%d ", arr[i]);
-  }
+    for(int i = *size; i > 0; i--){
+        arr[i] = arr[i-1];
+    }
 
-  return 0;
+    arr[0] = element;
+    (*size)++;
+
+    return 1;
 
 }
 
-int insertlast (int arr[], int size, int *count){
-  int i;
+int insertlast (int arr[], int *size, int element){
 
-  for(i = 0; i < (*count); i++){}
-    arr[i] = 9;
-    (*count)++;
+    arr[(*size)++] = element;
+    return 1;
 
-  printf("\nInsert last: ");
-  for(i = 0; i < size; i++){
-    printf("%d ", arr[i]);
-  }
-
-  return 0;
 }
 
+int deletefirst (int arr[], int *size){
+
+    for(int i = 0; i < *size - 1; i++){
+        arr[i] = arr[i+1];
+    }
+
+    (*size)--;
+
+    return 1;
+}
+
+int deletelast (int arr[], int *size){
+
+    (*size)--;
+
+    return 1;
+}
