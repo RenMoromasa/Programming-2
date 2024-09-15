@@ -65,7 +65,6 @@ int deletelast (int arr[], int *size){
     (*size)--;
     return 0;
 }
-<<<<<<< HEAD
 
 void display(int arr[], int *size) {
 
@@ -75,7 +74,6 @@ void display(int arr[], int *size) {
     printf("\n");
 
 }
-=======
 
 void display(int arr[], int *size) {
 
@@ -85,4 +83,3 @@ void display(int arr[], int *size) {
     printf("\n");
 
 }
->>>>>>> 37bf6a218bd14512b97d43173b88aa3ad783dc0e
