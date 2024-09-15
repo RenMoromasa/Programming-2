@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/* sum of two numbers using functions */
+
 void sumoftwo(int , int, int*);
 
 int main (){
@@ -19,7 +21,5 @@ int main (){
 }
 
 void sumoftwo(int x, int y, int* sum){
-	
 	*sum = x + y;
-	
 }

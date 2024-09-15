@@ -14,7 +14,6 @@ int main(){
 	printf("Enter size: ");
 	scanf("%d", &size);
 
-	
 	printf("Enter values: \n");
 	
 	for(i = 0; i < size; i++){
@@ -72,8 +71,6 @@ int main(){
 			}
 		}	
 	
-
-
 	return 0;
 	
 }

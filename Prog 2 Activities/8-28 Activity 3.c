@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Getting even numbers using malloc in an array*/
 
 int main(){
 	
