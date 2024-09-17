@@ -1,7 +1,8 @@
+/*
+2024-09-17-20-55-00.png
+*/
 #include <stdio.h>
 #include <ctype.h>
-
-int isDigitOnly(char str[]);
 
 int main() {
     char str[100];
@@ -14,12 +15,12 @@ int main() {
     } else {
         printf("The string contains non-digit characters.");
     }
-    
 }
 
 int isDigitOnly(char str[]){
+    
     for(int i = 0; str[i] != '\0'; i++){
-        if(str[i] < '0' || str[i] > '9'){
+        if(!isdigit(str[i])){
             return 0;
         }
     }

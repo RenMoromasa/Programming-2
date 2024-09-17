@@ -1,37 +1,31 @@
+/*
+2024-09-17-20-56-56.png
+*/
 #include <stdio.h>
-#include <string.h>
 
 int countWords(char str[]);
 
-int main (){
+int main(){
     
     char str[100];
     
     printf("Enter a string: ");
     scanf(" %[^\n]s", &str);
     
+    int result = countWords(str);
+    printf("Number of words: %d", result);
     
-    printf("Number of words: %d", countWords(str));
+    return 0;
 }
 
 int countWords(char str[]){
-
-    int inWord = 0, wordCount = 0;
+    int count = 0;
     
     for(int i = 0; str[i] != '\0'; i++){
         if(str[i] == ' '){
-            if(inWord) {
-                wordCount++;
-                inWord = 0;
-            }
-        } else {
-            inWord = 1;
+            count++;
         }
     }
     
-    if(inWord){
-        wordCount++;
-    }
-    
-    return wordCount;
+    return count + 1;
 }
