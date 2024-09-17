@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int isDigitOnly(char str[]);
+
+int main() {
+    char str[100];
+    
+    printf("Enter a string: ");
+    scanf(" %[^\n]s", &str);
+    
+    if(isDigitOnly(str)){
+        printf("The string contains only digits.");
+    } else {
+        printf("The string contains non-digit characters.");
+    }
+    
+}
+
+int isDigitOnly(char str[]){
+    for(int i = 0; str[i] != '\0'; i++){
+        if(str[i] < '0' || str[i] > '9'){
+            return 0;
+        }
+    }
+    return 1;
+}
