@@ -23,11 +23,17 @@ int main (){
     printf("Even Values: ");
     for(int i = 0; i < evencount; i++){
         printf("%d ", evenArr[i]);
+        if(i != evencount - 1){
+            printf(", ");
+        }
     }
 
     printf("\nOdd Values: ");
     for(int i = 0; i < oddcount; i++){
         printf("%d ", oddArr[i]);
+        if(i != oddcount - 1){
+            printf(", ");
+        }
     }
 
     free(evenArr);
